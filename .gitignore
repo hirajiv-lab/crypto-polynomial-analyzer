@@ -1,0 +1,39 @@
+# SageMath temporary files
+*.pyc
+*.sage.py
+__pycache__/
+*.so
+*.sage
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Output files
+*.log
+*.out
+*.pdf
+*.aux
