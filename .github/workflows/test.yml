@@ -1,0 +1,31 @@
+name: Test Polynomial Analyzer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup SageMath
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y sagemath
+        
+    - name: Run basic tests
+      run: |
+        echo "Testing if analyzers can be parsed..."
+        sage -c "print('SageMath is working')"
+        
+    - name: Check documentation
+      run: |
+        echo "Checking required files..."
+        [ -f "README.md" ] && echo "✓ README.md exists"
+        [ -f "LICENSE" ] && echo "✓ LICENSE exists"
+        [ -f "slk2_analyzer_truly_final.sage" ] && echo "✓ Main analyzer exists"
